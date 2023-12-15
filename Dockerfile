@@ -11,7 +11,7 @@ RUN go build ./...
 RUN go install ./...
 
 
-FROM alpine:latest as runner
+FROM debian:12 as runner
 
 COPY --from=builder /go/bin/tesla-http-proxy /usr/local/bin/tesla-http-proxy
 
