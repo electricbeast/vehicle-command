@@ -98,12 +98,12 @@ func main() {
 		return
 	}
 	addr := fmt.Sprintf("%s:%d", host, port)
-	log.Info("[HTTP] Listening on %s", addr)
+	log.Info("Listening on %s", addr)
 
 	// To add more application logic requests, such as alternative client authentication, create
 	// a http.HandleFunc implementation (https://pkg.go.dev/net/http#HandlerFunc). The ServeHTTP
 	// method of your implementation can perform your business logic and then, if the request is
 	// authorized, invoke p.ServeHTTP. Finally, replace p in the below ListenAndServeTLS call with
 	// an object of your newly created type.
-	log.Error("Server stopped: %s", http.ListenAndServe(addr, p))
+	log.Error("Server stopped: %s", http.ListenAndServeTLS(addr, certFilename, keyFilename, p))
 }
