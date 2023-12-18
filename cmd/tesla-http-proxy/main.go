@@ -98,7 +98,7 @@ func main() {
 		return
 	}
 	addr := fmt.Sprintf("%s:%d", host, port)
-	log.Info("Listening on %s", addr)
+	log.Info("[HTTP] Listening on %s", addr)
 
 	// To add more application logic requests, such as alternative client authentication, create
 	// a http.HandleFunc implementation (https://pkg.go.dev/net/http#HandlerFunc). The ServeHTTP
